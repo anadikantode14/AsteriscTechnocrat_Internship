@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .product img {
+            width: 100%;
+            height: auto;
+            box-sizing: border-box;
+            object-fit: cover;
+        }
+
+        #featured>div.row.mx-auto.container>nav>ul>li.page-item.active>a {
+            background-color: black;
+        }
+
+        #featured>div.row.mx-auto.container>nav>ul>li:nth-child(n):hover>a {
+            background-color: #c8815f;
+            color: #fff;
+        }
+
+        .pagination a {
+            color: black;
+        }
+
+        .cart {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 360px;
+            min-height: 100vh;
+            padding: 20px;
+            background: #fff;
+            box-shadow: -2px 0 4px hsl(0 4% 15% /10%);
+            transition: 0.3s ease;
+        }
+        .cart.active{
+            right: 0;
+        }
+
+        .cart-box {
+            display: grid;
+            grid-template-columns: 32% 50% 18%;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .cart-img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            padding: 10px;
+        }
+
+        .detail-box {
+            display: grid;
+            row-gap: 0.5rem;
+        }
+
+        .cart-product-title {
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        .cart-price {
+            font-weight: 500;
+        }
+
+        .cart-quantity {
+            border: 1px solid;
+            outline-color: #c8815f;
+            width: 2.4rem;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .cart-remove {
+            color: #c8815f;
+        }
+        i.bx.bx-trash.cart-remove:hover {
+            color: #1d1d1d;
+        }
+
+        .total {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 1.5rem;
+            border-top: 1px solid;
+        }
+
+        .total-title {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .total-price {
+            margin-left: 0.5rem;
+        }
+
+        .buy-btn {
+            display: flex;
+            margin: 1.5rem auto 0 auto;
+            padding: 12px 20px;
+        }
+
+        #close-cart {
+            position: absolute;
+            top: 1rem;
+            right: 0.8rem;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
+        <div class="container">
+            <img src="images/logo/nexgenstore-high-resolution-logo-black-on-transparent-background.png" alt=""
+                id="logo">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span><i id="bar" class='bx bx-menu'></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <i class='bx bx-search'></i>
+                        <i class='bx bx-cart' id="cart-icon"></i>
+                        <a href="login.html"><i class='bx bxs-user'></i></a>
+                    </li>
+
+                    <!-- Your Cart  -->
+                    <div class="cart">
+                        <h2 font-weight-bold>Your Cart</h2>
+                        <hr>
+                        <div class="cart-content">
+                            
+                        </div>
+                        <div class="total">
+                            <div class="total-title">Total</div>
+                            <div class="total-price">₹0</div>
+                        </div>
+                        <button onclick="window.location.href='payment.html'" class="buy-btn">Buy Now</button>
+                        <i class='bx bx-x' id="close-cart"></i>
+
+                    </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <section id="featured" class="my-5 py-5">
+        <div class="container mt-5 py-5">
+            <h2 font-weight-bold>Our Featured</h2>
+            <hr>
+            <p>Life's Too Short to Blend In. Stand Out with Our Unforgettable Styles!</p>
+        </div>
+        <div class="row mx-auto container">
+            <div onclick="window.location.href='sproduct.html'" class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/shop/1.jpg" alt="" class="product-img img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="product-title">Pure Cotton T-shirt</h5>
+                <h4 class="price">₹309</h4>
+                <button class="buy-btn add-cart">Add to Cart</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/shop/10.jpg" alt="" class="product-img img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="product-title">Men Analogue Watch</h5>
+                <h4 class="price">₹3245</h4>
+                <button class="buy-btn add-cart">Add To Cart</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/shop/11.jpg" alt="" class="product-img img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="product-title">Summer Beach Hat</h5>
+                <h4 class="price">₹749</h4>
+                <button class="buy-btn add-cart">Add To Cart</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/shop/12.jpg" alt="" class="product-img img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="product-title">Men's White Sneakers</h5>
+                <h4 class="price">₹989</h4>
+                <button class="buy-btn add-cart">Add To Cart</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/shop/13.jpg" alt="" class="product-img img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="product-title">Silver Analogue Watch</h5>
+                <h4 class="price">₹3449</h4>
+                <button class="buy-btn add-cart">Add To Cart</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/shop/14.jpg" alt="" class="product-img img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="product-title">Men Flat Boots</h5>
+                <h4 class="price">₹879</h4>
+                <button class="buy-btn add-cart">Add To Cart</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/shop/15.jpg" alt="" class="product-img img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="product-title">Unisex Self Beanie</h5>
+                <h4 class="price">₹282</h4>
+                <button class="buy-btn add-cart">Add To Cart</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/shop/16.jpg" alt="" class="product-img img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="product-title">Premium Solid T-shirt</h5>
+                <h4 class="price">₹399</h4>
+                <button class="buy-btn add-cart">Add To Cart</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/shop/17.jpg" alt="" class="product-img img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="product-title">Printed Bomber Jacket</h5>
+                <h4 class="price">₹849</h4>
+                <button class="buy-btn add-cart">Add To Cart</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/shop/18.jpg" alt="" class="product-img img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="product-title">Yellow Cap</h5>
+                <h4 class="price">₹149</h4>
+                <button class="buy-btn add-cart">Add To Cart</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/shop/19.jpg" alt="" class="product-img img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="product-title">Men;s Black Hoodie</h5>
+                <h4 class="price">₹739</h4>
+                <button class="buy-btn add-cart">Add To Cart</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/shop/20.jpg" alt="" class="product-img img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="product-title">Women Salwar</h5>
+                <h4 class="price">₹366</h4>
+                <button class="buy-btn add-cart">Add To Cart</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/shop/2.jpg" alt="" class="product-img product-img img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="product-title">Premium Stretch Taped Shirt</h5>
+                <h4 class="price">₹3,449</h4>
+                <button class="buy-btn add-cart">Add To Cart</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/shop/3.jpg" alt="" class="product-img img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="product-title">Relaxed Fit Joggers</h5>
+                <h4 class="price">₹4,049</h4>
+                <button class="buy-btn add-cart">Add To Cart</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/shop/4.jpg" alt="" class="product-img img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="product-title">Vintage Lace-Up Shoes</h5>
+                <h4 class="price">₹4,739</h4>
+                <button class="buy-btn add-cart">Add To Cart</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/shop/5.jpg" alt="" class="product-img img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="product-title">Premium Leather Bag</h5>
+                <h4 class="price">₹2,109</h4>
+                <button class="buy-btn add-cart">Add To Cart</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/shop/6.jpg" alt="" class="product-img img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="product-title">Premium Stretch Taped Shirt</h5>
+                <h4 class="price">₹3,449</h4>
+                <button class="buy-btn add-cart">Add To Cart</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/shop/7.jpg" alt="" class="product-img img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="product-title">Relaxed Fit Joggers</h5>
+                <h4 class="price">₹4,049</h4>
+                <button class="buy-btn add-cart">Add To Cart</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/shop/8.jpg" alt="" class="product-img img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="product-title">Vintage Lace-Up Shoes</h5>
+                <h4 class="price">₹4,739</h4>
+                <button class="buy-btn add-cart">Add To Cart</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images//shop/9.jpg" alt="" class="product-img img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="product-title">Premium Leather Bag</h5>
+                <h4 class="price">₹2,109</h4>
+                <button class="buy-btn add-cart">Add To Cart</button>
+            </div>
+            <nav aria-label="...">
+                <ul class="pagination mt-5">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item" aria-current="page">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+
+
+
+    <section id="contact" class="mt-5 py-5">
+        <div class="row container mx-auto pt-5">
+            <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+                <img src="images/logo/logo-no-background-white-removebg-preview.png" alt="">
+                <h5>Let's Connect With Us</h5>
+                <div class="icons">
+                    <a href="#"><i class='bx bxl-facebook-square'></i></a>
+                    <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+            <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+                <h3 class="pb-2">Explore</h3>
+                <ul class="list-unstyled"></ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#featured">Featured</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </div>
+            <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+                <h3 class="pb-2">Our Services</h3>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Free Shipping</a></li>
+                <li><a href="#">Gift Cards</a></li>
+            </div>
+
+            <div class="footer-one col-lg-3 col-md-6 col-12">
+                <h3 class="pb-2">Shopping</h3>
+                <li><a href="#">Clothing Store</a></li>
+                <li><a href="#">Trending Shoes</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">Sale</a></li>
+            </div>
+        </div>
+    </section>
+
+    <div class="last-text">
+        <p>Copyright © 2023 All rights reserved | This Website is made by Anadi Kantode</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+        <script src="cart.js"></script>
+</body>
+
+</html>

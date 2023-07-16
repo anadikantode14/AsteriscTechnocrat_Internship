@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Website</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
+        <div class="container">
+            <img src="images/logo/nexgenstore-high-resolution-logo-black-on-transparent-background.png" alt=""
+                id="logo">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span><i id="bar" class='bx bx-menu'></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <i class='bx bx-search'></i>
+                        <i class='bx bx-cart' id="cart-icon"></i>
+                       <a href="login.html"><i class='bx bxs-user'></i></a>
+                    </li>
+
+                    <div class="cart">
+                        <h2 font-weight-bold>Your Cart</h2>
+                        <hr>
+                        <div class="cart-content">
+                            
+                        </div>
+                        <div class="total">
+                            <div class="total-title">Total</div>
+                            <div class="total-price">₹0</div>
+                        </div>
+                        <button class="buy-btn">Buy Now</button>
+                        <i class='bx bx-x' id="close-cart"></i>
+
+                    </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container">
+            <h5>NEW ARRIVALS</h5>
+            <h1><span>Best Price </span>This Year</h1>
+            <p>Prepare to Say Goodbye to Your Savings, <br>but Hello to Unmatched Style!</p>
+            <button>Shop Now</button>
+        </div>
+    </section>
+
+    <!-- brand section  -->
+    <section id="brand" class="container">
+        <div class="row m-0 py-5 ">
+            <img class="img-fluid col-lg-2 col-md-4 col-6" src="images/Brand/brand1.png" alt="">
+            <img class="img-fluid col-lg-2 col-md-4 col-6" src="images/Brand/brand2.png" alt="">
+            <img class="img-fluid col-lg-2 col-md-4 col-6" src="images/Brand/brand3.png" alt="">
+            <img class="img-fluid col-lg-2 col-md-4 col-6" src="images/Brand/brand4.png" alt="">
+            <img class="img-fluid col-lg-2 col-md-4 col-6" src="images/Brand/brand5.png" alt="">
+            <img class="img-fluid col-lg-2 col-md-4 col-6" src="images/Brand/brand6.png" alt="">
+        </div>
+    </section>
+
+    <!-- New Section -->
+    <section id="new" class="w-100">
+        <div class="row p-0 m-0">
+            <div class="one col-lg-4 col-md-12 col-12 p-0">
+                <img class="img-fluid" src="images/New/new1.jpg" alt="">
+                <div class="details">
+                    <h2>Extreme Rare Sneakers</h2>
+                    <button class="text-uppercase">Shop Now</button>
+                </div>
+            </div>
+            <div class="one col-lg-4 col-md-12 col-12 p-0">
+                <img class="img-fluid" src="images/New/new2.jpg" alt="">
+                <div class="details">
+                    <h2>Awesome White Outfit</h2>
+                    <button class="text-uppercase">Shop Now</button>
+                </div>
+            </div>
+            <div class="one col-lg-4 col-md-12 col-12 p-0">
+                <img class="img-fluid" src="images/New/new3.jpg" alt="">
+                <div class="details">
+                    <h2>Sportwear Up To 50% Off</h2>
+                    <button class="text-uppercase">Shop Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured section  -->
+    <section id="featured" class="my-5 pb-5">
+        <div class="container text-center mt-5 py-5">
+            <h3>Our Featured</h3>
+            <hr class="mx-auto">
+            <p>Life's Too Short to Blend In. Stand Out with Our Unforgettable Styles!</p>
+        </div>
+        <div class="row mx-auto container-fluid">
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/Featured/fea1.jpg" alt="" class="img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="p-name">Premium Leather Bag</h5>
+                <h4 class="p-price">₹2,109</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/Featured/fea2.jpg" alt="" class="img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="p-name">Premium Stretch Taped Shirt</h5>
+                <h4 class="p-price">₹3,449</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/Featured/fea3.jpg" alt="" class="img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="p-name">Relaxed Fit Joggers</h5>
+                <h4 class="p-price">₹4,049</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/Featured/fea4.jpg" alt="" class="img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="p-name">Vintage Lace-Up Shoes</h5>
+                <h4 class="p-price">₹4,739</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- banner section -->
+    <section id="banner" class="my-5 py-5">
+        <div class="container">
+            <h4>MID SEASON'S SALE</h4>
+            <h1>Autumn Collection<br>UP TO 20% OFF</h1>
+            <button class="text-uppercase">Shop Now</button>
+        </div>
+    </section>
+
+    <!-- Dresses & Jumpsuit Section  -->
+    <section id="clothes" class="my-5">
+        <div class="container text-center mt-5 py-5">
+            <h3>Dresses & Jumpsuits</h3>
+            <hr class="mx-auto">
+            <p>Unleash Your Inner Style Diva!</p>
+        </div>
+        <div class="row mx-auto container-fluid">
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/Dresses/drs1.jpg" alt="" class="img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="p-name">Floral Print Fit & Flare Dress</h5>
+                <h4 class="p-price">₹975</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/Dresses/drs2.jpg" alt="" class="img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="p-name">Waist Tie-Up Round-Neck Jumpsuit</h5>
+                <h4 class="p-price">₹1,395</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/Dresses/drs3.jpg" alt="" class="img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="p-name">Solid Jumpsuit with Tie-Up Waist</h5>
+                <h4 class="p-price">₹949</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/Dresses/drs4.jpg" alt="" class="img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="p-name">Premium Printed Top</h5>
+                <h4 class="p-price">₹449</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Watches Section -->
+    <section id="watches" class="my-5">
+        <div class="container text-center mt-5 py-5">
+            <h3>Best Watches</h3>
+            <hr class="mx-auto">
+            <p>Discover the Finest Selection of Watches. </p>
+        </div>
+        <div class="row mx-auto container-fluid">
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/watches/1.jpg" alt="" class="img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="p-name">LEE COOPER Multifunction Watch with Contrast Dial</h5>
+                <h4 class="p-price">₹3,553</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/watches/2.jpg" alt="" class="img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="p-name">TITAN Water-Resistant Analogue Watch</h5>
+                <h4 class="p-price">₹2,029</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/watches/3.jpg" alt="" class="img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="p-name">TIMEX Water-Resistant Analogue Watch</h5>
+                <h4 class="p-price"> ₹2,625</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/watches/4.jpg" alt="" class="img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="p-name">TOMMY HILFIGER Water-Resistant Analogue Watch</h5>
+                <h4 class="p-price">₹4,497</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Running shoes Section  -->
+    <section id="shoes" class="my-5 pb-5">
+        <div class="container text-center mt-5 py-5">
+            <h3>Running Shoes</h3>
+            <hr class="mx-auto">
+            <p>Find Shoes that Keep You Looking andd Feeling Great.</p>
+        </div>
+        <div class="row mx-auto container-fluid">
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/Shoes/1.jpg" alt="" class="img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="p-name">NIKE
+                    Revolution 6 NN Running Shoes</h5>
+                <h4 class="p-price">₹2,956</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/Shoes/2.jpg" alt="" class="img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="p-name">PUMA
+                    Zeta Running Shoes
+                </h5>
+                <h4 class="p-price">₹2,859</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/Shoes/3.jpg" alt="" class="img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="p-name">CAMPUS
+                    Harrow Lace-Up Running Shoes
+                </h5>
+                <h4 class="p-price">₹949</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/Shoes/4.jpg" alt="" class="img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="p-name">ADIDAS
+                    Oz-Takedown Running Shoes
+                </h5>
+                <h4 class="p-price">₹5,679</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section id="contact" class="mt-5 py-5">
+        <div class="row container mx-auto pt-5">
+            <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+                <img src="images/logo/logo-no-background-white-removebg-preview.png" alt="">
+                <h5>Let's Connect With Us</h5>
+                <div class="icons">
+                    <a href="#"><i class='bx bxl-facebook-square'></i></a>
+                    <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+            <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+                <h3 class="pb-2">Explore</h3>
+                <ul class="list-unstyled"></ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#featured">Featured</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </div>
+            <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+                <h3 class="pb-2">Our Services</h3>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Free Shipping</a></li>
+                <li><a href="#">Gift Cards</a></li>
+            </div>
+
+            <div class="footer-one col-lg-3 col-md-6 col-12">
+                <h3 class="pb-2">Shopping</h3>
+                <li><a href="#">Clothing Store</a></li>
+                <li><a href="#">Trending Shoes</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">Sale</a></li>
+            </div>
+        </div>
+    </section>
+
+    <div class="last-text">
+        <p>Copyright © 2023 All rights reserved | This Website is made by Anadi Kantode</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <script src="cart.js"></script>
+
+</body>
+
+</html>

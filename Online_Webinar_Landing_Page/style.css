@@ -1,0 +1,253 @@
+:root {
+    --c-bg: #232531;
+    --c-font: #cfcfd1;
+    --c-orange: #ff5733;
+    --font-fam: "Roboto Mono", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --transition: all .3s ease;
+}
+
+body {
+    font-family: var(--font-fam);
+    line-height: 1.7;
+    color: var(--c-font);
+    background: var(--c-bg);
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+    color: var(--c-font);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--c-orange);
+}
+
+.section-padding {
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.border-top {
+    border-top: 1px solid #edf0f5 !important;
+}
+
+.program h2 {
+    font-size: 1.5rem;
+}
+
+.program .border-top {
+    border-top: 1px solid #383b4f !important;
+}
+
+.program .border-bottom {
+    border-bottom: 1px solid #383b4f !important;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #232531;
+}
+
+.navbar .nav-logo {
+    color: var(--c-font);
+    font-size: 32px;
+}
+
+.navbar .nav-logo span {
+    background: linear-gradient(to right, #c70039, #ff5733 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--c-font);
+}
+
+.navbar-nav li {
+    padding: 10px 10px;
+}
+
+.navbar-nav li a {
+    letter-spacing: .1em;
+    font-size: 14px;
+}  
+  .navbar-nav .nav-item .nav-link:hover {
+    color: var(--c-orange);
+  }
+  
+  .navbar-nav .nav-item.active .nav-link {
+    color: var(--c-orange);
+  }
+
+.navbar .container li.cta>a {
+    border: 2px solid #3f4046;
+    border-radius: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #ff5733;
+    text-transform: uppercase;
+}
+
+.navbar .container li.cta>a:hover {
+    color: #fff;
+}
+
+
+#hero h1 {
+    font-size: 86px;
+    background: linear-gradient(to right, #c70039, #ff5733 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#hero .caption {
+    font-size: 24px;
+}
+
+.btn-custom {
+    text-transform: uppercase;
+    color: #fff !important;
+    background: #3f4046;
+    padding: 16px 30px;
+    display: inline-block;
+    letter-spacing: .2em;
+    position: relative;
+    transition: var(--transition);
+}
+
+.btn-custom:hover {
+    background: linear-gradient(to right, #c70039, #ff5733 70%);
+}
+
+.btn-custom>span {
+    position: relative;
+    z-index: 2;
+    font-size: 16px;
+}
+
+.section-title {
+    margin-bottom: 60px;
+}
+
+.section-title .line {
+    width: 60px;
+    height: 2px;
+    background: var(--c-orange);
+    margin: 16px auto 24px auto;
+}
+
+.section-title p {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cap {
+    color: var(--c-orange);
+}
+
+.coordinator img {
+    max-width: 50px;
+    border-radius: 50%;
+    margin-right: 1.5rem;
+}
+
+.bio a {
+    color: var(--c-orange);
+}
+
+.speaker {
+    margin-bottom: 50px;
+}
+
+h4.cap.my-4 {
+    font-size: 20px;
+}
+
+.row.align-items-center.speaker {
+    max-width: 1140px;
+    height: 540px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.site-footer {
+    padding: 4em 0;
+    background: #1b1d24;
+}
+
+@media (min-width: 768px) {
+    .site-footer {
+        padding: 8em 0;
+    }
+}
+
+.site-footer .border-top {
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.ml-auto, .mx-auto {
+    margin-left: auto!important;
+}
+
+.site-footer h2,
+.site-footer h3,
+.site-footer h4 {
+    color: #fff;
+}
+
+.site-footer a {
+    color: #fff;
+}
+
+.site-footer a:hover {
+    color: #ff5733;
+}
+
+.site-footer ul li {
+    margin-bottom: 10px;
+}
+
+.site-footer .footer-heading {
+    font-size: 16px;
+    color: #818186 !important;
+}
+.form-group .form-control {
+    color: #fff !important;
+    background: none;
+    border: 2px solid #fff;
+}
+label{
+    margin-bottom: 0.6rem;
+}
+.form-group{
+    margin-bottom: 1.8rem;
+}
+.form-group .form-control:active,
+.form-group .form-control:focus {
+    background: none;
+}
+#register .row{
+    justify-content: center;
+}

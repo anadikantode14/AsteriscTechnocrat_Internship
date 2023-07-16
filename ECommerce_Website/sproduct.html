@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .small-img-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .small-img-col {
+            flex-basis: 24%;
+            cursor: pointer;
+        }
+
+        .sproduct select {
+            display: block;
+            padding: 5px 10px;
+        }
+
+        .sproduct input {
+            width: 50px;
+            height: 40px;
+            padding-left: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        .sproduct input:focus {
+            outline: none;
+        }
+
+        #pdetails button {
+            background: #c8815f;
+            letter-spacing: 1px;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: all .35s ease;
+        }
+
+        #pdetails button:hover {
+            transform: translateY(-5px);
+            background: #2a2a2a;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
+        <div class="container">
+            <img src="images/logo/nexgenstore-high-resolution-logo-black-on-transparent-background.png" alt=""
+                id="logo">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span><i id="bar" class='bx bx-menu'></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <i class='bx bx-search'></i>
+                        <i class='bx bx-cart' id="cart-icon"></i>
+                        <a href="login.html"><i class='bx bxs-user'></i></a>
+                    </li>
+                    <div class="cart">
+                        <h2 font-weight-bold>Your Cart</h2>
+                        <hr>
+                        <div class="cart-content">
+
+                        </div>
+                        <div class="total">
+                            <div class="total-title">Total</div>
+                            <div class="total-price">₹0</div>
+                        </div>
+                        <button class="buy-btn">Buy Now</button>
+                        <i class='bx bx-x' id="close-cart"></i>
+                        <i class='bx bxs-user'></i>
+                    </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container sproduct my-5 pt-5" id="pdetails">
+        <div class="row mt-5">
+            <div class="col-lg-5 col-md-12 col-12">
+                <img class="img-fluid w-100 pb-1" src="images/shop/1.jpg" id="MainImg">
+                <div class="small-img-group">
+                    <div class="small-img-col">
+                        <img src="images/shop/1.jpg" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/shop/24.jpg" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/shop/25.jpg" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/shop/26.jpg" width="100%" class="small-img">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 col-12">
+                <h6>Home / T-shirt</h6>
+                <h3 class="py-4">Men's Fashion T-Shirt</h3>
+                <h2>₹399</h2>
+                <select class="my-3">
+                    <option>Select Size</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                </select>
+                <input type="number" value="1">
+                <button id="cart-icon">Add To Cart</button>
+                <h4 class="mt-5 mb-3">Product Details</h4>
+                <p>Introducing our comfortable and stylish T-Shirt, the perfect addition to your wardrobe. Crafted from
+                    soft and breathable fabric, this t-shirt offers exceptional comfort throughout the day.
+                    With its classic design and versatile appeal, it's suitable for any occasion. The crew neck and
+                    short sleeves provide a relaxed fit, allowing you to move freely and stay comfortable.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="featured" class="my-5 pb-5">
+        <div class="container text-center mt-5 py-5">
+            <h3>Related Products</h3>
+            <hr class="mx-auto">
+
+        </div>
+        <div class="row mx-auto container-fluid">
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/Featured/fea1.jpg" alt="" class="img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="p-name">Premium Leather Bag</h5>
+                <h4 class="p-price">₹2,109</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/Featured/fea2.jpg" alt="" class="img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="p-name">Premium Stretch Taped Shirt</h5>
+                <h4 class="p-price">₹3,449</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/Featured/fea3.jpg" alt="" class="img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="p-name">Relaxed Fit Joggers</h5>
+                <h4 class="p-price">₹4,049</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <img src="images/Featured/fea4.jpg" alt="" class="img-fluid mb-3">
+                <div class="star">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <h5 class="p-name">Vintage Lace-Up Shoes</h5>
+                <h4 class="p-price">₹4,739</h4>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="mt-5 py-5">
+        <div class="row container mx-auto pt-5">
+            <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+                <img src="images/logo/logo-no-background-white-removebg-preview.png" alt="">
+                <h5>Let's Connect With Us</h5>
+                <div class="icons">
+                    <a href="#"><i class='bx bxl-facebook-square'></i></a>
+                    <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+            <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+                <h3 class="pb-2">Explore</h3>
+                <ul class="list-unstyled"></ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#featured">Featured</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </div>
+            <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+                <h3 class="pb-2">Our Services</h3>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Free Shipping</a></li>
+                <li><a href="#">Gift Cards</a></li>
+            </div>
+
+            <div class="footer-one col-lg-3 col-md-6 col-12">
+                <h3 class="pb-2">Shopping</h3>
+                <li><a href="#">Clothing Store</a></li>
+                <li><a href="#">Trending Shoes</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">Sale</a></li>
+            </div>
+        </div>
+    </section>
+
+    <div class="last-text">
+        <p>Copyright © 2023 All rights reserved | This Website is made by Anadi Kantode</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <script>
+        var MainImg = document.getElementById('MainImg');
+        var smallimg = document.getElementsByClassName('small-img');
+
+        smallimg[0].onclick = function () {
+            MainImg.src = smallimg[0].src;
+        }
+        smallimg[1].onclick = function () {
+            MainImg.src = smallimg[1].src;
+        }
+        smallimg[2].onclick = function () {
+            MainImg.src = smallimg[2].src;
+        }
+        smallimg[3].onclick = function () {
+            MainImg.src = smallimg[3].src;
+        }
+    </script>
+    <script src="cart.js"></script>
+
+</body>
+
+</html>
