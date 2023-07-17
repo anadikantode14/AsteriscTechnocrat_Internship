@@ -112,6 +112,14 @@ a:hover {
 .navbar .container li.cta>a:hover {
     color: #fff;
 }
+#bar {
+    font-size: 2rem;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--c-font)!important;
+    padding: 7px;
+    transition: all 0.5s ease 0s;
+}
 
 
 #hero h1 {
