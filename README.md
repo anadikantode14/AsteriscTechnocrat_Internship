@@ -18,6 +18,6 @@ Live Demo: https://online-webinar-landing-page.netlify.app/
 
 The Portfolio project showcases my personal portfolio website. It is developed using HTML, CSS, and JavaScript. The portfolio website displays my skills, experience, projects, and contact information. It serves as a professional representation of my work and capabilities.
 
-Live Demo: 
+Live Demo: https://anadi-kantode-portfolio.netlify.app/
 
 Each project folder in this repository contains the necessary source code, assets, and documentation specific to that project. Feel free to explore each project folder for more details.
