@@ -311,9 +311,9 @@ section.about .container .read-more:hover {
 }
 
 /* ============ WORK & EDUCATION SECTION ============ */
-section.work-education .container {
+/* section.work-education .container {
     width: 65%;
-}
+} */
 .row{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -816,6 +816,22 @@ footer .copyright {
         gap: 1rem;
         text-align: center;
     }
+    .image {
+        width: 60%;
+         margin-left: auto;
+        margin-right: auto;
+    
+    }
+    /* ================= WORK AND EDUCATION SECTION ================== */
+    .row {
+        display: block;
+        overflow-x: auto; 
+    }
+
+    .timeline-item {
+        flex: 0 0 50%; 
+    }
+
 
     /* ================= SKILLS SECTION ================== */
     section.skills .container {
